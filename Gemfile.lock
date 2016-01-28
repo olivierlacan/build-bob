@@ -25,6 +25,7 @@ GEM
     multipart-post (2.0.0)
     net-http-persistent (2.9.4)
     net-http-pipeline (1.0.1)
+    puma (2.15.3)
     pusher-client (0.6.2)
       json
       websocket (~> 1.0)
@@ -53,6 +54,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler
+  puma
   sinatra
   travis
 
