@@ -18,6 +18,7 @@ GEM
       net-http-persistent (>= 2.7)
       net-http-pipeline
     highline (1.7.8)
+    httpclient (2.7.1)
     json (1.8.3)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -55,6 +56,8 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
+  faraday
+  httpclient
   puma
   sinatra
   travis
