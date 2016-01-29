@@ -8,10 +8,21 @@ end
 
 get "/builds" do
   @recent_builds = builds.map do |build|
-    { number: build.number, state: build.state }
+    { number: build.number, state: build.state, failures: find_failures(build) }
   end
 
   haml :builds
+end
+
+def find_failures(build)
+  return nil unless build.state == "failed"
+
+  body = build.jobs.first.log.clean_body
+
+  start_delimiter = "Failed examples:"
+  end_delimiter = "Randomized"
+
+  failures = body[/#{start_delimiter}(.*?)#{end_delimiter}/m, 1]
 end
 
 def builds

@@ -1,4 +1,4 @@
 %h1 Builds for #{ENV["GITHUB_ORGANIZATION"]}/#{ENV["GITHUB_REPO"]}
 %ul
   - @recent_builds.each do |build|
-    %li= "#{build[:number]} #{build[:state]}"
+    %li= "#{build[:number]} #{build[:state]} #{build[:failures]}"
