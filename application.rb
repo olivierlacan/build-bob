@@ -23,6 +23,12 @@ def find_failures(build)
   end_delimiter = "Randomized"
 
   failures = body[/#{start_delimiter}(.*?)#{end_delimiter}/m, 1]
+
+  if failures.nil?
+    return nil
+  else
+    failures.split(" # ")
+  end
 end
 
 def builds
