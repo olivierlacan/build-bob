@@ -1,0 +1,3 @@
+%ul
+  - @recent_builds.each do |build|
+    %li= "#{build[:number]} #{build[:state]}"
